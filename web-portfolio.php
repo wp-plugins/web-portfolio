@@ -74,7 +74,7 @@ class Web_Portfolio {
 		
 		global $wpdb;
 		
-		$pageArray		=	$wpdb->get_results( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_content = '[web_portfolio]' AND post_status = 'publish' AND post_type = 'page'" ) );
+		$pageArray		=	$wpdb->get_results( "SELECT * FROM $wpdb->posts WHERE post_content = '[web_portfolio]' AND post_status = 'publish' AND post_type = 'page'" );
 		$portfolio		=	array(
 			'post_title'    => 'Portfolio',
 			'post_content'  => '[web_portfolio]',
@@ -121,7 +121,7 @@ class Web_Portfolio {
 		global $wpdb;
 
 		$query					= "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'portfolio'";
-		$posts					= $wpdb->get_results( $wpdb->prepare( $query ) );
+		$posts					= $wpdb->get_results( $query );
 
 		foreach( $posts as $post ) {
 			$post_id			= $post->ID;
@@ -137,7 +137,7 @@ class Web_Portfolio {
 
 		$post_id				= $post_id ? $post_id : 0;
 		$query					= "SELECT ID FROM {$wpdb->posts} WHERE post_type = 'attachment' AND post_parent = {$post_id}";
-		$attachments			= $wpdb->get_results( $wpdb->prepare( $query ) );
+		$attachments			= $wpdb->get_results( $query );
 
 		foreach( $attachments as $attachment ) {
 			// true is force delete

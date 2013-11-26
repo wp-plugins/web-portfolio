@@ -7,11 +7,16 @@ class Web_Portfolio_Functions {
 		$html				=	'';
 		$porfolio_category	=	get_categories( array( 'taxonomy' => 'porfolio_category', 'hide_empty' => '1' ) );
 		
-		$html				=	'<ul class="web_portfolio"><li><a href="#all" class="active">Show All</a></li>';
-		foreach( $porfolio_category as $category ){
-			$html			.=	'<li><a href="#' . $category->slug . '">' . $category->name . '</a></li>';
+		if( !empty( $porfolio_category ) ){
+			
+			$html			=	'<ul class="web_portfolio"><li><a href="#all" class="active">Show All</a></li>';
+			foreach( $porfolio_category as $category ){
+				$html		.=	'<li><a href="#' . $category->slug . '">' . $category->name . '</a></li>';
+			}
+			$html			.=	'</ul>';
+		} else {
+			$html			=	'No portfolio listed.';
 		}
-		$html				.=	'</ul>';
 		
 		echo $html;
 	}
@@ -24,7 +29,7 @@ class Web_Portfolio_Functions {
 		$portfolio			=	query_posts( array( 'post_type' => 'lumia_porfolio', 'taxonomy' => 'porfolio_category', 'term' => '' ) );
 		
 		$html				=	'<div class="portfolio_grid_block"><ul class="portfolio_grid">';
-		$pageArray			=	$wpdb->get_row( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_title = 'Portfolio' AND post_status = 'publish' AND post_type = 'page'" ) );
+		$pageArray			=	$wpdb->get_row( "SELECT ID FROM $wpdb->posts WHERE post_title = 'Portfolio' AND post_status = 'publish' AND post_type = 'page'" );
 		$structure			=	( get_option( 'permalink_structure' ) == '' ) ? '&' : '?';
 		
 		foreach( $portfolio as $portfolioObj ){
@@ -77,7 +82,7 @@ class Web_Portfolio_Functions {
 		
 		$html					=	'';
 		$slug					=	$_REQUEST['slug'];
-		$portfolio				=	$wpdb->get_row( $wpdb->prepare( "SELECT * FROM $wpdb->posts WHERE post_name = '{$slug}' AND post_status = 'publish' AND post_type = 'lumia_porfolio'" ) );
+		$portfolio				=	$wpdb->get_row( "SELECT * FROM $wpdb->posts WHERE post_name = '{$slug}' AND post_status = 'publish' AND post_type = 'lumia_porfolio'" );
 		
 		$porfolio_data			=	get_post_meta( $portfolio->ID, '_porfolio', true );
 		$link					=	$porfolio_data['link'];
