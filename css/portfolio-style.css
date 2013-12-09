@@ -48,6 +48,7 @@
     margin: 15px 0 !important;
     padding: 0;
     width: 25%;
+	min-height:235px;
 }
 .portfolio_grid li .portfolio_item {
 	display:block;

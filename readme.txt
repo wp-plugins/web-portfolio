@@ -4,7 +4,7 @@ Donate link:
 Tags: media gallery, filterable portfolio, jquery portfolio, sortable portfolio, portfolio, gallery
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: 2.1.4
+Stable tag: 2.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,7 @@ An answer to that question.
 
 
 == Upgrade notice ==
-
+Fixed the errors
 
 
 == Arbitrary section 1 ==

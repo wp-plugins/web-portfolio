@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 Plugin Name: Web Portfolio
 Plugin URI: http://weblumia.com/web-portfolio
 Description: Web portfolio plugin allows you to display portfolio to your websites.
-Version: 2.1.4
+Version: 2.1.5
 Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */
@@ -333,6 +333,8 @@ function lumia_porfolio_edit_columns( $columns ) {
 add_action( 'manage_posts_custom_column', 'lumia_porfolio_columns', 10, 2 );
 
 function lumia_porfolio_columns( $column, $post_id ) {
+	
+	$cats				=	'';
 	$porfolio_data		=	get_post_meta( $post_id, '_porfolio', true );
 	$porfolio_category	=	wp_get_object_terms( $post_id, 'porfolio_category' );
 	foreach( $porfolio_category as $c ){
