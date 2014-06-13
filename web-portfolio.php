@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 Plugin Name: Web Portfolio
 Plugin URI: http://weblumia.com/web-portfolio
 Description: Web portfolio plugin allows you to display portfolio to your websites.
-Version: 2.1.5
+Version: 2.1.6
 Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */

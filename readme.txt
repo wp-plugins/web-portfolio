@@ -3,8 +3,8 @@ Contributors: pv.jinesh
 Donate link: 
 Tags: media gallery, filterable portfolio, jquery portfolio, sortable portfolio, portfolio, gallery
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 2.1.5
+Tested up to: 3.8.1
+Stable tag: 2.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
