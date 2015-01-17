@@ -62,7 +62,7 @@ An answer to that question.
 
 
 == Upgrade notice ==
-Fixed the errors
+
 
 
 == Arbitrary section 1 ==

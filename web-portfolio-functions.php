@@ -58,8 +58,7 @@ class Web_Portfolio_Functions {
 	}
 	
 	public function get_category_slug( $portfolio ){
-		
-		$catnames				=	'';
+	
 		$categories				=	get_the_terms( $portfolio, 'porfolio_category' );
 		$count					=	count( $categories );
 		$i						=	1;
