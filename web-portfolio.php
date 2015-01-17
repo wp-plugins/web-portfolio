@@ -1,12 +1,9 @@
 <?php
-//ini_set ("display_errors", 1); 
-//error_reporting(E_ALL);
-
 /*
 Plugin Name: Web Portfolio
 Plugin URI: http://weblumia.com/web-portfolio
 Description: Web portfolio plugin allows you to display portfolio to your websites.
-Version: 2.1.7
+Version: 2.1.8
 Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */
