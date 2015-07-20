@@ -102,7 +102,7 @@ if (!class_exists('MultipleThumbnails')) {
 		 */
 		public function enqueue_admin_scripts() {
 			//$template_url = get_bloginfo('template_url') . '/js/multi-post-thumbnails-admin.js';
-			$template_url = plugins_url( '/js/multiple-thumbnails-admin.js', __FILE__ );
+			$template_url = plugins_url( '../js/multiple-thumbnails-admin.js', __FILE__ );
 			wp_enqueue_script("featured-image-custom", $template_url , array('jquery'));
 		}
 		/**

@@ -3,8 +3,8 @@ Contributors: pv.jinesh
 Donate link: 
 Tags: media gallery, filterable portfolio, jquery portfolio, sortable portfolio, portfolio, gallery
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 2.1.8
+Tested up to: 4.2.2
+Stable tag: 2.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,7 +54,8 @@ An answer to that question.
 == Screenshots ==
 
 1. Portfolio admin interface
-2. Portfolio Page Listing 
+1. Portfolio admin settings interface
+2. Portfolio Listing 
 3. Portfolio Details 
 
 == Changelog ==
@@ -63,6 +64,9 @@ An answer to that question.
 
 == Upgrade notice ==
 Fixed the errors
+Added setting page
+Attractive design
+Responsive
 
 
 == Arbitrary section 1 ==

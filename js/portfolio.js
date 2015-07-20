@@ -1,23 +1,25 @@
-jQuery( document ).ready(function() {
-	jQuery( ".web_portfolio li a" ).click(function() {
-		var href			=	jQuery( this ).attr( "href" );
+jQuery( document ).ready(function( $ ) {
+	$( document ).on( 'click', ".web_portfolio li a", function() {
+		$( 'spinner' ).show();
+		var href			=	$( this ).attr( "href" );
 		href				=	href.split( '#' );
 		catslug				=	href[1];
-		jQuery( ".web_portfolio li a.active" ).removeClass( 'active' );
-		jQuery( this ).addClass( 'active' );
+		$( ".web_portfolio li a.active" ).removeClass( 'active' );
+		$( this ).addClass( 'active' );
 		
 		if( catslug == 'all' ) {
-			jQuery( 'ul.portfolio_grid li.hide' ).fadeIn( 'normal' ).removeClass( 'hide' );
+			$( 'ul.portfolio_grid li.hide' ).fadeIn( 'normal' ).removeClass( 'hide' );
 		} else {
-			jQuery( 'ul.portfolio_grid li' ).each(function() {
-				if( !jQuery( this ).hasClass( catslug ) ) {
-					jQuery( this ).fadeOut( 'normal' ).addClass( 'hide' );
+			$( 'ul.portfolio_grid li' ).each(function() {
+				if( !$( this ).hasClass( catslug ) ) {
+					$( this ).fadeOut( 'normal' ).addClass( 'hide' );
     
 				} else {
-					jQuery( this ).fadeIn( 'normal' ).removeClass( 'hide' );
+					$( this ).fadeIn( 'normal' ).removeClass( 'hide' );
 				}
 			});
 		}
+		setTimeout( function(){ $( '.spinner' ).hide(); }, 500 );
 		return false;
 	});
 });
