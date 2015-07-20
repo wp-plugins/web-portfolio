@@ -8,7 +8,7 @@ Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */
 /**
-	Copyright 2013 Jinesh.P.V (email: jinuvijay5@gmail.com)
+	Copyright 2015-2016 Jinesh.P.V (email: jinuvijay5@gmail.com)
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
