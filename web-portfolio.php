@@ -139,8 +139,6 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 			$plugin			=	isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
 			check_admin_referer( "activate-plugin_{$plugin}" );
 			self::init();
-	
-			flush_rewrite_rules();
 		}
 		
 		/**
@@ -179,8 +177,6 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 			$plugin = isset( $_REQUEST['plugin'] ) ? $_REQUEST['plugin'] : '';
 			check_admin_referer( "deactivate-plugin_{$plugin}" );
-	
-			flush_rewrite_rules();
 		}
 		
 		/**
@@ -718,6 +714,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 									)
 							);
 		register_taxonomy( 'porfolio_category', 'lumia_porfolio', $args );
+		flush_rewrite_rules();
 	}
 	
 	/**
