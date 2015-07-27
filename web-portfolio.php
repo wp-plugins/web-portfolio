@@ -3,7 +3,7 @@
 Plugin Name: Web Portfolio
 Plugin URI: http://weblumia.com/web-portfolio
 Description: Web portfolio plugin allows you to display responsive and attractive portfolio to your websites.
-Version: 2.1.9
+Version: 2.2
 Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */
@@ -39,7 +39,7 @@ if ( version_compare( PHP_VERSION, '5', '<' ) ) {
  * Main Web_Portfolio Class
  *
  * @class Web_Portfolio
- * @version	2.1.9
+ * @version	2.2
  */
 if ( ! class_exists( 'Web_Portfolio' ) ) : 
 
@@ -49,7 +49,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Web_Portfolio Constructor.
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function __construct() {
@@ -80,7 +80,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Init web portfolio when WordPress initialises.
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		
 		public function init(){
@@ -91,7 +91,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Callback function
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function web_portfolio_do_output_buffer_callback( $buffer ){
@@ -110,7 +110,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * portfolio_includes
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function portfolio_includes(){
@@ -120,7 +120,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Add web portfolio image sizes to WP
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		public function add_image_sizes() {
 			add_image_size( 'web_portfolio', 549, 411, true );
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 		/**
 		 * lumia_activation
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 
  
@@ -143,7 +143,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Dynamic creation for portfolio page
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function create_portfolio_page(){
@@ -168,7 +168,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Deactivation hook
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function lumia_deactivation() {
@@ -181,7 +181,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Uninstall hook
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function uninstall() {
@@ -204,7 +204,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * lumia_delete_portfolios
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public static function lumia_delete_portfolios() {
@@ -223,7 +223,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 		/**
 		 * lumia_delete_attachments
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public static function lumia_delete_attachments( $post_id = false ) {
@@ -241,7 +241,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * portfolio_settings
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function portfolio_settings() {
@@ -258,7 +258,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Options page callback
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function create_lumia_porfolio_admin_page() {
@@ -457,7 +457,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 		/**
 		 * Register and add settings
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function admin_page_init() {   
@@ -498,7 +498,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * Sanitize each setting field as needed
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function sanitize( $input ) {
@@ -555,7 +555,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 		/**
 		 * lumia_delete_attachments
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public static function lumia_styles() {
@@ -575,7 +575,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * web_portfolio_list
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function web_portfolio_list(){
@@ -586,7 +586,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * portfolio_scripts
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function portfolio_scripts(){
@@ -599,7 +599,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * load_portfoilio_scripts
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function load_portfoilio_scripts(){
@@ -623,7 +623,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * portfolio_page_template
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function portfolio_page_template() {
@@ -637,7 +637,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		
 		/**
 		 * portfolio_single_template
-		 * @since 2.1.9
+		 * @since 2.2
 		 */
 		 
 		public function portfolio_single_template () {
@@ -655,7 +655,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * Creation of portfolio post type
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 		 
 	add_action( 'init', 'init_post_type' );
@@ -719,7 +719,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * lumia_porfolio_meta_boxes
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	function lumia_porfolio_meta_boxes() {
@@ -735,7 +735,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * display_lumia_porfolio_meta_box
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	function display_lumia_porfolio_meta_box() {
@@ -761,7 +761,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * action hook for lumia_porfolio_save_post
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	add_action( 'save_post', 'lumia_porfolio_save_post' );
@@ -793,7 +793,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * action hook for lumia_porfolio_edit_columns
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	add_filter( 'manage_edit-lumia_porfolio_columns', 'lumia_porfolio_edit_columns' );
@@ -813,7 +813,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * action hook for lumia_porfolio_columns
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	add_action( 'manage_posts_custom_column', 'lumia_porfolio_columns', 10, 2 );
@@ -845,7 +845,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 	
 	/**
 	 * Load MultipleThumbnails
-	 * @since 2.1.9
+	 * @since 2.2
 	 */
 	 
 	require_once( 'includes/multiple-thumbnails.php' );	 
