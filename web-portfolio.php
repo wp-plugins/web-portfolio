@@ -626,7 +626,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		 * @since 2.2
 		 */
 		 
-		public function portfolio_page_template() {
+		public function portfolio_page_template( $page_template ) {
 			
 			if ( is_page( 'web_portfolio' ) ) {
 				if( file_exists( dirname( __FILE__ ) . '/templates/web-portfolio-page-template.php' ) )
@@ -640,7 +640,7 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		 * @since 2.2
 		 */
 		 
-		public function portfolio_single_template () {
+		public function portfolio_single_template ( $page_template ) {
 			
 			global $wp_query, $post;
 		
