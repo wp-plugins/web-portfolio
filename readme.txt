@@ -8,11 +8,12 @@ Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Web portfolio plugin is highly suitable to showcase your portfolio and group them nicely under jQuery powered tabs.
+Web portfolio is free, responsive and colorfull wordpress plugin can transform a humble wordpress website into a feature rich media gallery where you can proudly showcase your projects, client logos, photography, or any other pictures or videos of your choice.
 
 == Description ==
 
-Web portfolio plugin is highly suitable to showcase your portfolio and group them nicely under jQuery powered tabs.
+Web portfolio is free, responsive and colorfull wordpress plugin can transform a humble wordpress website into a feature rich media gallery where you can proudly showcase your projects, client logos, photography, or any other pictures or videos of your choice. If you read through our documentation we have provided step by step instructions to use the various features and functionality of this plugin
+
 Features
 * Admin interface to add, edit and manage portfolio
 * Fields for link and Technologies Used details
@@ -20,11 +21,11 @@ Features
 
 Shortcodes
 
-[web_portfolio] - For listings on page or posts
+[web_portfolio] - For portfolio listings on page or posts
 
 Theme Functions
 
-web_portfolio_list() - For listings on page or posts
+web_portfolio_list() - For portfolio listings on page or posts
 
 Support
 
