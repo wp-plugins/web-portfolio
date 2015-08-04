@@ -3,7 +3,7 @@
 Plugin Name: Web Portfolio
 Plugin URI: http://weblumia.com/web-portfolio
 Description: Web portfolio plugin allows you to display responsive and attractive portfolio to your websites.
-Version: 2.2
+Version: 2.3
 Author: Jinesh.P.V
 Author URI: http://www.weblumia.com/
 */
@@ -559,10 +559,180 @@ if ( ! class_exists( 'Web_Portfolio' ) ) :
 		 */
 		 
 		public static function lumia_styles() {
+			
 			if( !is_admin() ){
+				
+				$options = get_option( 'porfolio_settings' );
+
+				// General option values
+				$display_mode = isset( $options['display_mode'] ) ? esc_attr( $options['display_mode'] ) : '';
+				if( $display_mode == 4 ) {
+					$width = '25%';
+				} elseif( $display_mode == 3 ) {
+					$width = '33.333%';
+				} else{
+					$width = '50%';
+				}
+				$font_family = isset( $options['font_family'] ) ? esc_attr( $options['font_family'] ) : '';
+				$box1_color = isset( $options['box1_color'] ) ? esc_attr( $options['box1_color'] ) : '';
+				$box2_color = isset( $options['box2_color'] ) ? esc_attr( $options['box2_color'] ) : '';
+				$box3_color = isset( $options['box3_color'] ) ? esc_attr( $options['box3_color'] ) : '';
+				$box4_color = isset( $options['box4_color'] ) ? esc_attr( $options['box4_color'] ) : '';
+				
+				// Navigation option values
+				$nav_bg_color = isset( $options['nav_bg_color'] ) ? esc_attr( $options['nav_bg_color'] ) : '';
+				$nav_hover_color = isset( $options['nav_hover_color'] ) ? esc_attr( $options['nav_hover_color'] ) : '';
+				$nav_font_size = isset( $options['nav_font_size'] ) ? esc_attr( $options['nav_font_size'] ) : '';
+				$nav_font_color = isset( $options['nav_font_color'] ) ? esc_attr( $options['nav_font_color'] ) : '';
+				$nav_font_hover_color = isset( $options['nav_font_hover_color'] ) ? esc_attr( $options['nav_font_hover_color'] ) : '';
+				
+				// Content option values
+				$font_size = isset( $options['font_size'] ) ? esc_attr( $options['font_size'] ) : '';
+				$font_color = isset( $options['font_color'] ) ? esc_attr( $options['font_color'] ) : '';
+				$content_font_size = isset( $options['content_font_size'] ) ? esc_attr( $options['content_font_size'] ) : '';
+				$content_font_color = isset( $options['content_font_color'] ) ? esc_attr( $options['content_font_color'] ) : '';
+			
 				wp_register_style( 'lumia-google-fonts', 'http://fonts.googleapis.com/css?family=Oswald|Open+Sans|Fontdiner+Swanky|Crafty+Girls|Pacifico|Satisfy|Gloria+Hallelujah|Bangers|Audiowide|Sacramento');
         		wp_enqueue_style( 'lumia-google-fonts' );
-				wp_register_style( 'lumia-portfolio', plugins_url( 'css/portfolio-style.php', __FILE__ ) );
+				wp_register_style( 'lumia-portfolio', plugins_url( 'css/portfolio-style.css', __FILE__ ) );
+				$custom_css   = ".web_portfolio li a {
+									background: " . $nav_bg_color . ";
+									color: " . $nav_font_color . ";
+									font: " . $nav_font_size . " " . $font_family . ";
+								}
+								.web_portfolio li a.active , .web_portfolio li a:hover{
+									background: " . $nav_hover_color . ";
+									color: " . $nav_font_hover_color . ";
+								}
+								.portfolio_grid li{
+									width: " . $width . ";
+								}
+								.portfolio_lft h3{
+									font: " . $font_size . ";/1.2em " . $font_family . ";
+									color: " . $font_color . ";
+								}
+								.portfolio_lft p{
+									font: " . $content_font_size . " " . $font_family . ";
+									color: " . $content_font_color . ";
+								}
+								.portfolio_lft h4{
+									font:1.5em/35px " . $font_family . ";
+								}
+								.portfolio_lft span{
+									display:block;
+									font: " . $content_font_size . " " . $font_family . ";
+									color: " . $content_font_color . ";
+								}
+								.portfolio_lft a{
+									font:1.1em " . $font_family . ";
+								}";
+								
+				if( isset( $box1_color ) ) {
+					
+					$custom_css   .= ".box1_color {
+									background: " . $box1_color . ";
+								}
+								.portfolio_lft h4.box1_color {
+									border-left: 5px solid " . $box1_color . ";
+									color: " . $box1_color . ";
+								}
+								.technology.box1_color {
+									background: none;
+								}
+								.technology.box1_color span {
+									background: " . $box1_color . ";
+									display: inline-block;
+									font: 13px/17px Open Sans;
+									margin-right: 4px;
+									padding: 3px;
+									color: #fff;
+								}";
+				}
+				
+				if( isset( $box2_color ) ) {
+					
+					$custom_css   .= ".box2_color {
+									background: " . $box2_color . ";
+								}
+								.portfolio_lft h4.box2_color {
+									border-left: 5px solid " . $box2_color . ";
+									color: " . $box2_color . ";
+								}
+								.technology.box2_color {
+									background: none;
+								}
+								.technology.box2_color span {
+									background: " . $box2_color . ";
+									display: inline-block;
+									font: 13px/17px Open Sans;
+									margin-right: 4px;
+									padding: 3px;
+									color: #fff;
+								}";
+				}
+				
+				if( isset( $box3_color ) ) {
+					
+					$custom_css   .= ".box3_color {
+									background: " . $box3_color . ";
+								}
+								.portfolio_lft h4.box3_color {
+									border-left: 5px solid " . $box3_color . ";
+									color: " . $box3_color . ";
+								}
+								.technology.box3_color {
+									background: none;
+								}
+								.technology.box3_color span {
+									background: " . $box3_color . ";
+									display: inline-block;
+									font: 13px/17px Open Sans;
+									margin-right: 4px;
+									padding: 3px;
+									color: #fff;
+								}";
+				}
+				
+				if( isset( $box4_color ) ) {
+					$custom_css   .= ".box4_color {
+									background: " . $box4_color . ";
+								}
+								.portfolio_lft h4.box4_color {
+									border-left: 5px solid " . $box4_color . ";
+									color: " . $box4_color . ";
+								}
+								.technology.box4_color {
+									background: none;
+								}
+								.technology.box4_color span {
+									background: " . $box4_color . ";
+									display: inline-block;
+									font: 13px/17px Open Sans;
+									margin-right: 4px;
+									padding: 3px;
+									color: #fff;
+								}";
+				}
+				
+				$custom_css   .= ".portfolio_grid li .portfolio_item_bottom h3 {
+									font: " . $font_size . "/23px " . $font_family . ";	
+									margin:0 0 10px 0;
+								}
+								.portfolio_grid li .portfolio_item_bottom h3 a {
+									text-decoration:none;
+									color: " . $font_color . ";
+									margin:0;
+								}
+								.portfolio_grid li .portfolio_item_bottom .technology span {
+									font:13px/17px " . $font_family . ";	
+									background:#f1f1f1;
+									padding:3px;
+									margin-right:4px;
+									display:inline-block;
+								}";
+								
+        		wp_add_inline_style( 'lumia-portfolio', $custom_css );
+		
 				wp_enqueue_style( 'lumia-portfolio' );
 				if( isset( $_REQUEST['slug'] ) ){
 					wp_register_style( 'sliderkit-core', plugins_url( 'css/sliderkit-core.css', __FILE__ ) );
